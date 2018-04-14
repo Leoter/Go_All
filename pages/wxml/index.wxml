@@ -1,0 +1,14 @@
+<!--pages/wxml/index.wxml-->
+
+
+
+
+<!-- array 是一个数组 -->
+
+<view wx:for="{{array}}">
+
+  {{index}}: {{item.message}}
+
+</view>
+
+
