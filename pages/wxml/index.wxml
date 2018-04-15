@@ -1,14 +1,15 @@
-<!--pages/wxml/index.wxml-->
-
-
-
-
-<!-- array 是一个数组 -->
-
-<view wx:for="{{array}}">
-
-  {{index}}: {{item.message}}
-
+<view class="page">
+<!--页头-->
+<view class="page__hd"></view>
+<!--主体-->
+<view class="page__bd"></view>
+<!--没有页脚-->
 </view>
 
 
+<view class="weui-footer">
+<view class="weui-footer__links">
+    <navigator url="" class="weui-footer__link">小黄象</navigator>
+</view>
+<view class="weui-footer__text">Copyright © 精品专栏组</view>
+</view>
