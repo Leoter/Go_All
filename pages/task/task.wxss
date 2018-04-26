@@ -1,0 +1,28 @@
+/* pages/task/task.wxss */
+.task-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.username{
+  margin: 10px 10px;
+}
+
+.task-datetime{
+  margin: 10px 10px;
+}
+
+.head-portrait{
+  border-color:whitesmoke;
+  border-style: solid;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  margin-left: 10px; 
+}
+
+.weui-form-preview{
+    margin-bottom: 25px;
+}

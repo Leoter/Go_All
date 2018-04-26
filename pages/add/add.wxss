@@ -1,0 +1,8 @@
+/* pages/add/add.wxss */
+.remark{
+  margin-top: 20px;
+}
+
+.task-submit-button{
+  margin: 50rpx;
+}

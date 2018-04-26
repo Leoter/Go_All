@@ -1,0 +1,154 @@
+<!--pages/add/add.wxml-->
+<view class="page__bd">
+    <form bindsubmit="TaskSubmit" bindreset="TaskReset">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">任务类型</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="selector" bindchange="bindTaskTypeChange" name="TaskType" value="{{taskTypeIndex}}" range="{{taskTypes}}">
+                        <view class="weui-select weui-select_in-select-after">{{taskTypes[taskTypeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <template is="{{templateTypes[templateIndex]}}" data="{{...templateData[templateTypes[templateIndex]]}}"/>
+
+
+        </view>
+
+        
+
+        <view class="weui-cells__title remark">备注</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea name="remarks" class="weui-textarea" placeholder="" style="height: 3.3em" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn task-submit-button" formType="submit" type="primary">发布</button>
+    </form>
+</view>
+
+
+<template name='express'>
+        <!--<view class="weui-cells weui-cells_after-title">-->
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">快递公司</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入快递公司" name="expressName" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">快递单号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入快递单号" name="expressNum"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">派送时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" name="deliveryTime" value="{{date}}" start="{{date}}" end="2019-09-01" bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">拿货号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="takeNum" class="weui-input" placeholder="请输入快递公司"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">收货地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input name="address" class="weui-input" placeholder="请输入你的宿舍号"/>
+                </view>
+            </view>  
+        <!--</view>-->
+</template>
+
+<template name='print'>
+
+    <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">大小</view>
+        </view>
+        <view class="weui-cell__bd">
+            <picker bindchange="bindPrintSizeChange" name="printSize" value="{{printSizeIndex}}" range="{{printSize}}">
+                <view class="weui-select weui-select_in-select-after">{{printSize[printSizeIndex]}}</view>
+            </picker>
+        </view>
+    </view>
+
+        <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">类型</view>
+        </view>
+        <view class="weui-cell__bd">
+            <picker mode="multiSelector" bindchange="bindPrintTypeChange" name="printType" value="{{printTypeIndex}}" range="{{printType}}">
+                <view class="weui-select weui-select_in-select-after">{{printType[0][printTypeIndex[0]]}}    {{printType[1][printTypeIndex[1]]}}</view>
+            </picker>
+        </view>
+    </view>
+
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">份数</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入份数" name="printNum" value='{{printNum}}'/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">收货地址</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入你的宿舍号" name="address"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+        <view class="weui-label">上传打印文件</view>
+    </view>
+    <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="" name="file"/>
+    </view>
+    </view>  
+
+</template>
+
+<template name='other'>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+        <view class="weui-cells__title remark">内容</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入文本" name="content" style="height: 3.3em" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+</template>

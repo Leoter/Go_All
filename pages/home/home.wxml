@@ -1,0 +1,209 @@
+<!--pages/home/home.wxml-->
+<!--<text>pages/home/home.wxml</text>-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+
+
+
+                    <navigator url="/pages/task/task">
+                        <view class='task-list-item'>
+                          <view class="task-header">
+                              <view class='task-header-info'>
+                                  <image class="head-portrait" src="../../images/portrait.jpg"/>
+                                  <text class='username'>ALVIN</text>
+                                  <text class='task-datetime'>4月12日  18:28</text>                              
+                              </view>
+
+                              <view class="weui-form-preview__value_in-hd">¥5.00</view>                
+                          </view>
+                          
+                          <view class='task-contain'>
+                            <text>有人帮我拿一下快点？</text>
+                          </view>
+                          <view class='task-footer'>
+                            <text class='task-tag'>#代拿物品</text>
+                            <view class='task-icon'>
+                              <image class='task-read-icon' src='../../images/Visible_64px.png'></image>
+                              <text class='task-read-num'>5</text>
+                              <image class='task-read-icon' src='../../images/Paper_Plane_64px.png'></image>
+                              <text class='task-read-num'>2</text>        
+                            </view>
+
+                          </view>
+                        </view>
+                    </navigator>
+
+                    <navigator url="/pages/task/task">
+                        <view class='task-list-item'>
+                          <view class="task-header">
+                              <view class='task-header-info'>
+                                  <image class="head-portrait" src="../../images/portrait.jpg"/>
+                                  <text class='username'>ALVIN</text>
+                                  <text class='task-datetime'>4月12日  18:28</text>                              
+                              </view>
+
+                              <view class="weui-form-preview__value_in-hd">¥5.00</view>                
+                          </view>
+                          
+                          <view class='task-contain'>
+                            <text>有人帮我拿一下快点？</text>
+                          </view>
+                          <view class='task-footer'>
+                            <text class='task-tag'>#代拿物品</text>
+                            <view class='task-icon'>
+                              <image class='task-read-icon' src='../../images/Visible_64px.png'></image>
+                              <text class='task-read-num'>5</text>
+                              <image class='task-read-icon' src='../../images/Paper_Plane_64px.png'></image>
+                              <text class='task-read-num'>2</text>        
+                            </view>
+
+                          </view>
+                        </view>
+                    </navigator>
+              
+                    <navigator url="/pages/task/task">
+                        <view class='task-list-item'>
+                          <view class="task-header">
+                              <view class='task-header-info'>
+                                  <image class="head-portrait" src="../../images/portrait.jpg"/>
+                                  <text class='username'>ALVIN</text>
+                                  <text class='task-datetime'>4月12日  18:28</text>                              
+                              </view>
+
+                              <view class="weui-form-preview__value_in-hd">¥5.00</view>                
+                          </view>
+                          
+                          <view class='task-contain'>
+                            <text>有人帮我拿一下快点？</text>
+                          </view>
+                          <view class='task-footer'>
+                            <text class='task-tag'>#代拿物品</text>
+                            <view class='task-icon'>
+                              <image class='task-read-icon' src='../../images/Visible_64px.png'></image>
+                              <text class='task-read-num'>5</text>
+                              <image class='task-read-icon' src='../../images/Paper_Plane_64px.png'></image>
+                              <text class='task-read-num'>2</text>        
+                            </view>
+
+                          </view>
+                        </view>
+                    </navigator>
+
+                    <navigator url="/pages/task/task">
+                        <view class='task-list-item'>
+                          <view class="task-header">
+                              <view class='task-header-info'>
+                                  <image class="head-portrait" src="../../images/portrait.jpg"/>
+                                  <text class='username'>ALVIN</text>
+                                  <text class='task-datetime'>4月12日  18:28</text>                              
+                              </view>
+
+                              <view class="weui-form-preview__value_in-hd">¥5.00</view>                
+                          </view>
+                          
+                          <view class='task-contain'>
+                            <text>有人帮我拿一下快点？</text>
+                          </view>
+                          <view class='task-footer'>
+                            <text class='task-tag'>#代拿物品</text>
+                            <view class='task-icon'>
+                              <image class='task-read-icon' src='../../images/Visible_64px.png'></image>
+                              <text class='task-read-num'>5</text>
+                              <image class='task-read-icon' src='../../images/Paper_Plane_64px.png'></image>
+                              <text class='task-read-num'>2</text>        
+                            </view>
+
+                          </view>
+                        </view>
+                    </navigator>
+
+                    <navigator url="/pages/task/task">
+                        <view class='task-list-item'>
+                          <view class="task-header">
+                              <view class='task-header-info'>
+                                  <image class="head-portrait" src="../../images/portrait.jpg"/>
+                                  <text class='username'>ALVIN</text>
+                                  <text class='task-datetime'>4月12日  18:28</text>                              
+                              </view>
+
+                              <view class="weui-form-preview__value_in-hd">¥5.00</view>                
+                          </view>
+                          
+                          <view class='task-contain'>
+                            <text>有人帮我拿一下快点？</text>
+                          </view>
+                          <view class='task-footer'>
+                            <text class='task-tag'>#代拿物品</text>
+                            <view class='task-icon'>
+                              <image class='task-read-icon' src='../../images/Visible_64px.png'></image>
+                              <text class='task-read-num'>5</text>
+                              <image class='task-read-icon' src='../../images/Paper_Plane_64px.png'></image>
+                              <text class='task-read-num'>2</text>        
+                            </view>
+
+                          </view>
+                        </view>
+                    </navigator>
+
+                    <navigator url="/pages/task/task">
+                        <view class='task-list-item'>
+                          <view class="task-header">
+                              <view class='task-header-info'>
+                                  <image class="head-portrait" src="../../images/portrait.jpg"/>
+                                  <text class='username'>ALVIN</text>
+                                  <text class='task-datetime'>4月12日  18:28</text>                              
+                              </view>
+
+                              <view class="weui-form-preview__value_in-hd">¥5.00</view>                
+                          </view>
+                          
+                          <view class='task-contain'>
+                            <text>有人帮我拿一下快点？</text>
+                          </view>
+                          <view class='task-footer'>
+                            <text class='task-tag'>#代拿物品</text>
+                            <view class='task-icon'>
+                              <image class='task-read-icon' src='../../images/Visible_64px.png'></image>
+                              <text class='task-read-num'>5</text>
+                              <image class='task-read-icon' src='../../images/Paper_Plane_64px.png'></image>
+                              <text class='task-read-num'>2</text>        
+                            </view>
+
+                          </view>
+                        </view>
+                    </navigator>
+                    
+                    </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+            </view>
+
+            <view class="weui-loadmore" hidden="{{isHideLoadMore}}"> 
+                <view class="weui-loading"></view> <view class="weui-loadmore__tips">正在加载</view>
+            </view>
+            <view class="weui-loadmore weui-loadmore_line" hidden="{{isHideNoMore}}">
+                 <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无更多数据</view>
+            </view>
+        </view>     
+    </view>
+</view>
+
+
+
+<!--任务列表-->
+
+
+
+
