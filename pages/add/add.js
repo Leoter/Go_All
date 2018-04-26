@@ -83,13 +83,14 @@ Page({
 
   TaskSubmit: function (e) {
     // 任务类型
+    console.log(e.detail.value);  
     var formData = e.detail.value;
     wx.request({
       url: 'https://test.alvinsite.top/index.php',
+      //url: 'http://localhost/goAll/index.php',
+      method: 'POST',
       data: formData,
-      header: {
-        'Content-Type': 'application/json'
-      },
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
       success: function (res) {
         console.log(res.data)
       }

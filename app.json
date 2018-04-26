@@ -1,11 +1,9 @@
 {
   "pages":[
-    
     "pages/add/add",
     "pages/me/me",
     "pages/home/home",
     "pages/task/task",
-    "pages/wxml/index",
     "pages/index/index",
     "pages/logs/logs"
   ],
