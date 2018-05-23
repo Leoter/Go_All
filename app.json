@@ -1,8 +1,10 @@
 {
   "pages":[
     "pages/add/add",
-    "pages/me/me",
+    "pages/user/user",
+    
     "pages/home/home",
+
     "pages/task/task",
     "pages/index/index",
     "pages/logs/logs"
@@ -33,7 +35,7 @@
       },
       {
         "text": "我的",
-        "pagePath": "pages/me/me",
+        "pagePath": "pages/user/user",
         "iconPath": "images/profile.png",
         "selectedIconPath": "images/profile-actived.png"
       }

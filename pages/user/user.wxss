@@ -1,0 +1,59 @@
+/* pages/me/me.wxss */
+.user-zone{
+  background: #eeeeee;
+
+}
+
+
+
+.user-info{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+  background: white;
+  margin: 0 0 40rpx 0;
+  height: 360rpx;
+
+}
+
+.task-info{
+  background: white;
+  margin: 0 0 40rpx 0;
+}
+
+.task-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  
+}
+
+.username{
+  width: 360rpx;
+  text-align: center;
+
+}
+
+.user-info-setting{
+  width: 360rpx;
+  
+  text-align: center;
+  font-size: 28rpx;
+  color:#878787; 
+}
+
+.task-datetime{
+  margin: 10px 10px;
+}
+
+.head-portrait{
+  
+  border-color:whitesmoke;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+
+  border-style: solid;
+  
+}

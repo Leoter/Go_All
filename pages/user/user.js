@@ -5,7 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    imgHeadPortrait: [
+      'https://s.gravatar.com/avatar/b83677b6df7e637782565e8fc6c89455?s=80',
+    ],
+    icon: [
+      '../../images/Checklist_64px.png',
+      '../../images/Up_64px.png',
+      '../../images/Down_64px.png',
+      '../../images/Settings_64px.png',
+    ],
+  },
+
+  previewHeadPortrait: function (e) {
+    var imgArr = this.data.imgHeadPortrait;
+    wx.previewImage({
+      urls: imgArr,               //所有要预览的图片的地址集合 数组形式
+    })
   },
 
   /**

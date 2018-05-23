@@ -1,8 +1,25 @@
 /* pages/add/add.wxss */
+.page__bd{
+  background: #eeeeee;
+}
+
+.task{
+  background: white;
+  margin: 0 0 40rpx 0;
+}
+
 .remark{
-  margin-top: 20px;
+
 }
 
 .task-submit-button{
   margin: 50rpx;
+}
+
+.weui-cell__bd{
+  text-align: right;
+}
+
+.weui-cell__ft{
+  margin-left:10rpx;
 }

@@ -1,7 +1,8 @@
 <!--pages/add/add.wxml-->
 <view class="page__bd">
     <form bindsubmit="TaskSubmit" bindreset="TaskReset">
-        <view class="weui-cells weui-cells_after-title">
+        <view class='task task-header'>
+        <!--<view class="weui-cells weui-cells_after-title"></view>-->
             <view class="weui-cell weui-cell_select">
                 <view class="weui-cell__hd weui-cell__hd_in-select-after">
                     <view class="weui-label">任务类型</view>
@@ -12,24 +13,92 @@
                     </picker>
                 </view>
             </view>
-
-            <template is="{{templateTypes[templateIndex]}}" data="{{...templateData[templateTypes[templateIndex]]}}"/>
-
-
-        </view>
-
         
-
-        <view class="weui-cells__title remark">备注</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">赏金</view>
+                </view>
                 <view class="weui-cell__bd">
-                    <textarea name="remarks" class="weui-textarea" placeholder="" style="height: 3.3em" />
-                    <view class="weui-textarea-counter">0/200</view>
+                    <input class="weui-input" placeholder="请输入赏金金额" name="reward" value='{{reward}}'/>
+                </view>
+                <view class="weui-cell__ft">
+                    <text>元</text>
                 </view>
             </view>
+
+            <view class="weui-cell weui-cell_input" hidden='{{isMore==false}}'>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">招募人数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入人数" name="servantNum" value='{{servantNum}}'/>
+                </view>
+                <view class="weui-cell__ft">
+                    <text>人</text>
+                </view>
+            </view>
+
+
+
+            <view class="weui-cell weui-cell_select" hidden='{{isMore==false}}'>
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">处理方式</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="selector" bindchange="bindTaskTypeChange" name="TaskType" value="{{checkModeIndex}}" range="{{checkModes}}">
+                        <view class="weui-select weui-select_in-select-after">{{checkModes[checkModeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_input" hidden='{{isMore==false}}'>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开始时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" name="deliveryTime" value="{{startedTime}}" start="{{startedTime}}" end="2019-09-01" bindchange="bindDateChange">
+                        <view class="weui-input">{{startedTime}}</view>
+                    </picker>
+                </view>
+            </view>
+        
+            <view class="weui-cell weui-cell_input" hidden='{{isMore==false}}'>
+                <view class="weui-cell__hd">
+                    <view class="weui-label">结束时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" name="deliveryTime" value="{{endTime}}" start="{{endTime}}" end="2019-09-01" bindchange="bindDateChange">
+                        <view class="weui-input">{{endTime}}</view>
+                    </picker>
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_link">
+                <view class="weui-cell__bd" bindtap='clickMore'>更多</view>
+            </view>
         </view>
-        <button class="weui-btn task-submit-button" formType="submit" type="primary">发布</button>
+
+<view class='task task-content'>
+    <view class="weui-cells__title remark">内容</view>
+    <view class="weui-cells weui-cells_after-title">
+    <template is="{{templateTypes[taskTypeIndex]}}" data="{{...templateData[templateTypes[taskTypeIndex]]}}"/>
+    </view>
+</view>
+
+<view class='task task-footer'>
+    <view class="weui-cells__title remark">备注</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea name="remarks" class="weui-textarea" placeholder="" style="height: 3.3em" />
+                <view class="weui-textarea-counter">0/200</view>
+            </view>
+        </view>
+    </view>
+    <button class="weui-btn task-submit-button" formType="submit" type="primary">发布</button>
+</view>
     </form>
 </view>
 
@@ -92,7 +161,7 @@
             <view class="weui-label">大小</view>
         </view>
         <view class="weui-cell__bd">
-            <picker bindchange="bindPrintSizeChange" name="printSize" value="{{printSizeIndex}}" range="{{printSize}}">
+            <picker mode="selector" bindchange="bindPrintSizeChange" name="printSize" value="{{printSizeIndex}}" range="{{printSize}}">
                 <view class="weui-select weui-select_in-select-after">{{printSize[printSizeIndex]}}</view>
             </picker>
         </view>
@@ -117,6 +186,9 @@
         <view class="weui-cell__bd">
             <input class="weui-input" placeholder="请输入份数" name="printNum" value='{{printNum}}'/>
         </view>
+                <view class="weui-cell__ft">
+                    <text>份</text>
+                </view>
     </view>
 
     <view class="weui-cell weui-cell_input">
@@ -140,15 +212,10 @@
 </template>
 
 <template name='other'>
-      <view class="weui-cells weui-cells_after-title">
-      </view>
-        <view class="weui-cells__title remark">内容</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="请输入文本" name="content" style="height: 3.3em" />
-                    <view class="weui-textarea-counter">0/200</view>
-                </view>
-            </view>
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <textarea class="weui-textarea" placeholder="请输入文本" name="content" style="height: 3.3em" />
+            <view class="weui-textarea-counter">0/200</view>
         </view>
+    </view>
 </template>

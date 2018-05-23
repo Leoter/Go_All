@@ -11,6 +11,18 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     isHideNoMore: true,
+
+
+    imgUrls: [
+      'https://img.alicdn.com/tfs/TB12qddoeuSBuNjy1XcXXcYjFXa-520-280.jpg_q90_.webp',
+      'https://aecpm.alicdn.com/simba/img/TB1LMQ3dYZnBKNjSZFKSuwGOVXa.jpg',
+      'https://img.alicdn.com/simba/img/TB1M4sfmQyWBuNjy0FpSuussXXa.jpg',
+
+    ],
+    indicatorDots: false,
+    autoplay: true,
+    interval: 3000,
+    duration: 500
   },
 
 

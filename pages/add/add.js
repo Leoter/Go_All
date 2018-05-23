@@ -7,11 +7,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    taskTypes: ["代拿快递","代打印","代课","其它"],
-    taskTypeIndex: 1,
+    taskTypes: ['代拿快递','代打印','代课','其它'],
+    taskTypeIndex: 0,
 
     templateTypes: ['express','print','lesson','other'],
-    templateIndex: 1,
+
+
+    checkModes: ['直接通过', '等待审核'],
+    checkModeIndex: 0,
+
+    servantNum: 1,
+    reward: 1,
+
+    startedTime: util.formatTime(new Date()),
+    endTime: util.formatTime(new Date()),
+
+    isMore: false,
 
     templateData: { 
       express:{
@@ -31,12 +42,16 @@ Page({
     
   },
 
+  clickMore: function (e) {
+    this.setData({
+      isMore: true,
+    })
+  },
 
   bindTaskTypeChange: function (e) {
     console.log('picker country code 发生选择改变，携带值为', e.detail.value);
     this.setData({
       taskTypeIndex: e.detail.value,
-      templateIndex: e.detail.value,
  
     })
   },
@@ -93,7 +108,8 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       success: function (res) {
         console.log(res.data)
-      }
+      },
+
     })
   },
 

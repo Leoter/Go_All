@@ -1,6 +1,18 @@
 <!--pages/home/home.wxml-->
 <!--<text>pages/home/home.wxml</text>-->
 <view class="page">
+    <swiper indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+
+        <swiper-item wx:for="{{imgUrls}}">
+          <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+        </swiper-item>
+
+    </swiper>
+
+
+
+
+
     <view class="page__bd">
         <view class="weui-tab">
             <view class="weui-navbar">
