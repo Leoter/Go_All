@@ -10,7 +10,7 @@
 
 
         <view class='task-info'>
-            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="/pages/alltask/alltask" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="{{icon[0]}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                 </view>

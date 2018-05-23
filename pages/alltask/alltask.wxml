@@ -1,0 +1,32 @@
+<!--pages/alltask/alltask.wxml-->
+<!--<text>pages/alltask/alltask.wxml</text>-->
+<view class='page'>
+ <navigator url="/pages/task/task">
+  <view class='task-list-item'>
+    <view class="task-header">
+        <view class='task-header-info'>
+            <image class="head-portrait" src="../../images/portrait.jpg"/>
+            <text class='username'>ALVIN</text>
+            <text class='task-datetime'>4月12日  18:28</text>                              
+        </view>
+
+        <view class="weui-form-preview__value_in-hd">¥5.00</view>                
+    </view>
+    
+    <view class='task-contain'>
+      <text>有人帮我拿一下快点？</text>
+    </view>
+    <view class='task-footer'>
+      <text class='task-tag'>#代拿物品</text>
+      <view class='task-icon'>
+        <image class='task-read-icon' src='../../images/Visible_64px.png'></image>
+        <text class='task-read-num'>5</text>
+        <image class='task-read-icon' src='../../images/Paper_Plane_64px.png'></image>
+        <text class='task-read-num'>2</text>        
+      </view>
+
+    </view>
+  </view>
+</navigator>
+</view>
+<view class="container">123</view>
